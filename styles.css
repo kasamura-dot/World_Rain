@@ -1,0 +1,151 @@
+﻿:root {
+  --bg: #071018;
+  --text: #e8f1f8;
+  --muted: #9db2c3;
+  --line: #22384b;
+  --accent: #4ad9ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Noto Sans JP", sans-serif;
+  background: radial-gradient(circle at 20% 20%, #123047 0%, var(--bg) 55%);
+  color: var(--text);
+}
+
+.app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 16px 28px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 0.03em;
+}
+
+.sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+select {
+  min-width: 180px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #112838;
+  color: var(--text);
+  padding: 8px 10px;
+}
+
+button {
+  border: 1px solid var(--line);
+  background: #112838;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover,
+select:hover {
+  border-color: var(--accent);
+}
+
+.map-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(160deg, #0b1d2a 0%, #0d1a25 100%);
+  padding: 14px;
+}
+
+#map {
+  width: 100%;
+  height: min(72vh, 760px);
+  border: 1px solid #29455a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.meta {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.meta p {
+  margin: 3px 0;
+}
+
+.legend {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend i {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 3px;
+  border: 1px solid #0000004d;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #map {
+    height: 62vh;
+  }
+}
